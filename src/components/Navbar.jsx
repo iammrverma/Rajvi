@@ -23,7 +23,17 @@ const NavLink = ({ to, label, closeMenu }) => {
     </li>
   );
 };
-
+export const Navlist = ({ closeMenu, isOpen, wrap }) => {
+  return (
+    <ul className={`nav-list ${isOpen ? "open" : ""} ${wrap ? "wrap" : ""}`}>
+      <NavLink to="/" label="Home" closeMenu={closeMenu} />
+      <NavLink to="/about-us" label="About us" closeMenu={closeMenu} />
+      <NavLink to="/services" label="Services" closeMenu={closeMenu} />
+      <NavLink to="/portfolio" label="Portfolio" closeMenu={closeMenu} />
+      <NavLink to="/contact" label="Contact" closeMenu={closeMenu} />
+    </ul>
+  );
+};
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,13 +51,7 @@ const NavBar = () => {
           <button className="btn" onClick={closeMenu}>
             <Close />
           </button>
-          <ul className={`nav-list ${isOpen ? "open" : ""}`}>
-            <NavLink to="/" label="Home" closeMenu={closeMenu} />
-            <NavLink to="/about-us" label="About us" closeMenu={closeMenu} />
-            <NavLink to="/services" label="Services" closeMenu={closeMenu} />
-            <NavLink to="/portfolio" label="Portfolio" closeMenu={closeMenu} />
-            <NavLink to="/contact" label="Contact" closeMenu={closeMenu} />
-          </ul>
+          <Navlist closeMenu={closeMenu} isOpen={isOpen} wrap={true} />
         </div>
         <div className="navbar-actions">
           <div className="navbar-cta">
