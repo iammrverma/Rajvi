@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "../styles/FAQ.css"; // Add this CSS file for styling
+import RaiseUpOnScroll from "./RaiseUpOnScrool";
 
 const FAQ = () => {
   const faqs = [
@@ -33,35 +34,37 @@ const FAQ = () => {
       </div>
       <div className="faq-right">
         {faqs.map((faq, index) => (
-          <Accordion
-            key={index}
-            sx={{
-              backgroundColor: "var(--background-color)",
-              color: "var(--text-primary-color)",
-              borderRadius: "0px",
-              marginBottom: "1rem",
-              borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
-              aria-controls={`panel${index}-content`}
-              id={`panel${index}-header`}
+          <RaiseUpOnScroll>
+            <Accordion
+              key={index}
+              sx={{
+                backgroundColor: "var(--background-color)",
+                color: "var(--text-primary-color)",
+                borderRadius: "0px",
+                marginBottom: "1rem",
+                borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+              }}
             >
-              <Typography
-                variant="h6"
-                sx={{
-                  color: "var(--text-primary-color)",
-                  textTransform: "uppercase",
-                }}
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
+                aria-controls={`panel${index}-content`}
+                id={`panel${index}-header`}
               >
-                {faq.question}
-              </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography>{faq.answer}</Typography>
-            </AccordionDetails>
-          </Accordion>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "var(--text-primary-color)",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {faq.question}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>{faq.answer}</Typography>
+              </AccordionDetails>
+            </Accordion>
+          </RaiseUpOnScroll>
         ))}
       </div>
     </div>

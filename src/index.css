@@ -14,16 +14,21 @@ html {
   --text-secondary-color: #999999;
   --background-color: #121212;
   --background-secondary-color: #262525;
-  
+
   --theme: #c8f31d;
   --text-color: rgba(255, 255, 255, 0.87);
   --border: rgba(255, 255, 255, 0.08);
   --font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
-h1, h2, h3, h4, h5{
-  color : var(--text-primary-color);
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--text-primary-color);
 }
-p{
+p {
+  font-size: 1.5rem;
   color: var(--text-secondary-color);
 }
 #root {
@@ -33,13 +38,57 @@ body {
   background-color: var(--background-color);
 }
 
-@media (max-width:600px){
-  html{
+@media (max-width: 600px) {
+  html {
     font-size: 14px;
   }
 }
+/* Keyframes for raising the element */
+@keyframes raiseUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
+/* Initial state for elements */
+.raise-up {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
 
+/* Active state when animation starts */
+.raise-up.active {
+  animation: raiseUp 0.6s ease-out forwards;
+}
+/* Keyframes for sliding in from the left */
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Initial state for elements */
+.slide-right {
+  transform: translateX(50px);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* Active state when animation starts */
+.slide-right.active {
+  animation: slideInRight 0.6s ease-out forwards;
+}
 
 /* Scrollbar container */
 ::-webkit-scrollbar {
@@ -52,9 +101,9 @@ body {
   border-radius: 10px; /* Rounded corners for the track */
 }
 
-
 /* For Firefox (limited support) */
 * {
   scrollbar-width: thin; /* Thin scrollbar */
-  scrollbar-color: var(--text-primary-color, #888) var(--background-color, #f5f5f5); /* Thumb and track colors */
+  scrollbar-color: var(--text-primary-color, #888)
+    var(--background-color, #f5f5f5); /* Thumb and track colors */
 }

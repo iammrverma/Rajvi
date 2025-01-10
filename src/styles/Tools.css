@@ -1,0 +1,32 @@
+.tools {
+  display: flex;
+
+  align-items: center;
+  gap: 3rem;
+}
+
+.tool {
+  transform: translateY(50px);
+
+  opacity: 0;
+}
+
+.tool.animate {
+  animation: fadeIn 1s ease forwards;
+}
+
+.tool img {
+  filter: contrast(1) brightness(0.7);
+  width: 100px;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
