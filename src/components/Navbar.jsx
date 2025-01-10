@@ -4,7 +4,7 @@ import "../styles/navbar.css"; // Import the updated CSS with container queries
 import CTAButton from "./CTAButton";
 import Hamburger from "../icons/Hamburger";
 import Close from "../icons/Close";
-
+import TextHeart from "../icons/TextHeart";
 const NavLink = ({ to, label, closeMenu }) => {
   const location = useLocation();
   const isActive = location.pathname === to; // Check if the route is active
@@ -46,7 +46,10 @@ const NavBar = () => {
   return (
     <div className="nav-container">
       <nav className="navbar">
-        <h1 className="navbar-brand">Rajvi</h1>
+        <h1 className="navbar-brand">
+          Raj
+          <TextHeart styles={{ fontSize: ".75em" }} />i
+        </h1>
         <div className={`nav ${isOpen ? "open" : ""}`}>
           <button className="btn" onClick={closeMenu}>
             <Close />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/hero.css";
 import Follower from "../Follower";
+import TextHeart from "../TextHeart";
 
 const Hero = () => {
   const [hover, setHover] = useState(false);
@@ -40,8 +41,8 @@ const Hero = () => {
         <div className="left">
           <div className="anchor">
             <div className="row">
-              <span>we</span> <span></span>{" "}
-              <span className="text-heart">{"<3"}</span> <span>Love</span>
+              <span>we</span> <span></span> <TextHeart />
+              <span>Love</span>
             </div>
             <div className="row">
               <span>What</span> <span>We</span>
