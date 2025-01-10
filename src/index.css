@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+:root {
+  --text-primary-color: #ffffff;
+  --text-secondary-color: #999999;
+  --background-color: #121212;
+  --theme: #c8f31d;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --border: rgba(255, 255, 255, 0.08);
+  --font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+#root {
+  container-type: inline-size;
+}
+body {
+  background-color: var(--background-color);
+}
+
+@media (max-width:600px){
+  html{
+    font-size: 14px;
+  }
+}

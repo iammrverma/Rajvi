@@ -1,0 +1,167 @@
+/* General Styles */
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "brand nav actions";
+  align-items: center;
+  color: var(--text-primary-color);
+  padding: 1rem;
+  border-bottom: 2px solid var(--border);
+  font-size: 1.75rem;
+  position: sticky;
+  top: 0;
+
+  position: relative;
+}
+.nav {
+  grid-area: nav;
+}
+
+.navbar-actions {
+  gap: 10px;
+  grid-area: actions;
+}
+
+.navbar-header,
+.navbar-cta,
+.navbar-actions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: brand;
+}
+
+.navbar .btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  scale: 1;
+  transition: all 0.2s ease;
+}
+
+.navbar .btn:hover {
+  scale: 1.2;
+}
+
+/* Menu Styles */
+.nav-list {
+  list-style: none;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.nav.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav button {
+  display: none;
+}
+.nav-item a {
+  text-decoration: none;
+  color: var(--text-primary-color);
+  font-size: 1.25rem;
+  letter-spacing: 0.25rem;
+  font-weight: normal;
+  transition: color 0.3s;
+  text-transform: uppercase;
+  font-family: var(--font-family);
+  padding: 0.35rem;
+  white-space: nowrap;
+}
+
+.nav-item.active a {
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .navbar {
+    display: flex;
+    padding: 1rem 2rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+    background-color: var(--background-color);
+    background-color: rgba(var(--background-color), 0.1);
+    backdrop-filter: blur(5px);
+  }
+
+  .nav.open button {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+  }
+
+  .nav-list.open {
+    display: flex;
+    background-color: var(--text-primary-color);
+    gap: 2rem;
+    width: 60%;
+    height: 60%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-item a {
+    color: var(--background-color);
+  }
+  .nav-item.active a {
+    border-bottom: 1px solid var(--background-color);
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    grid-template-columns: 1fr 1fr; /* Change to two columns */
+    grid-template-areas: 
+      "brand actions"
+      "nav nav"; /* Nav takes full width on the second row */
+  }
+
+  .nav {
+    justify-content: center;
+    padding-top: 1rem;
+  }
+}
