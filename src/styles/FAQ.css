@@ -1,0 +1,38 @@
+.faq-container {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.faq-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.faq-left h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.faq-left p {
+  font-size: 1.2rem;
+  
+}
+
+.faq-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .faq-container {
+    grid-template-columns: 1fr;
+  }
+}

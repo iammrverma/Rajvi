@@ -1,20 +1,42 @@
-import React from 'react'
+import React from "react";
+import "../styles/clientsCarousal.css";
 
-const ClientsCarousal = ({width="100vw", height="10rem"}) => {
+// Import logos
+import logo3M from "../assets/logos/3m.svg";
+import barstoolStore from "../assets/logos/barstool-store.svg";
+import budweiser from "../assets/logos/budweiser.svg";
+import buzzfeed from "../assets/logos/buzzfeed.svg";
+import forbes from "../assets/logos/forbes.svg";
+import macys from "../assets/logos/macys.svg";
+import mensHealth from "../assets/logos/menshealth.svg";
+import mrBeast from "../assets/logos/mrbeast.svg";
+
+const ClientsCarousal = ({ width = "100vw", height = "10rem" }) => {
+  const logos = [
+    logo3M,
+    barstoolStore,
+    budweiser,
+    buzzfeed,
+    forbes,
+    macys,
+    mensHealth,
+    mrBeast,
+  ];
+
   return (
-    <div style={{
-      width:width,
-      height:height,
-      display:"flex",
-      gap:"3rem",
-      alignItems:"center",
-      justifyContent:"center",
-      flexWrap:"nowrap",
-      
-    }}>
-      
+    <div className="logos" style={{ width, height }}>
+      <div className="logos-slide">
+        {logos.map((logo, index) => (
+          <img key={index} src={logo} alt={`Client logo ${index + 1}`} />
+        ))}
+      </div>
+      <div className="logos-slide">
+        {logos.map((logo, index) => (
+          <img key={index} src={logo} alt={`Client logo ${index + 1}`} />
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ClientsCarousal
+export default ClientsCarousal;

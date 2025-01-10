@@ -37,7 +37,7 @@ const Follower = ({ hover, cursorPosition, size = "200", color = "var(--theme)",
         borderRadius: "50%",
         pointerEvents: "none",
         transition: "transform 0.1s ease",
-        boxShadow: "rgb(255, 255, 255) 0px 0px 20px;",
+        boxShadow: "rgb(255, 255, 255) 0px 0px 20px",
         ...style
       }}
     ></div>
