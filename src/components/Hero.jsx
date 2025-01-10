@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/hero.css";
-import Follower from "../Follower";
-import TextHeart from "../TextHeart";
+import "../styles/hero.css";
+import Follower from "./Follower";
+import TextHeart from "../icons/TextHeart";
 
 const Hero = () => {
   const [hover, setHover] = useState(false);

@@ -8,6 +8,8 @@ export const ReusableSection = ({ children, styles = {}, className = "" }) => {
       sx={{
         padding: "2rem 0",
         ...styles, // Merge custom styles
+        maxWidth:"100vw",
+        overflow: "hidden",
       }}
     >
       {children}

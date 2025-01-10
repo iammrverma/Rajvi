@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./sections/Hero";
+import Hero from "./Hero";
 import ClientsCarousal from "./ClientsCarousal";
 import FAQ from "./Faq";
 import Footer from "./Footer";
