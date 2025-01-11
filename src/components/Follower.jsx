@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Follower = ({ hover, cursorPosition, size = "200", color = "var(--theme)", style }) => {
+const Follower = ({ hover, cursorPosition, lag=0.1, size = "200", color = "var(--theme)", style }) => {
   const [followerPosition, setFollowerPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -8,8 +8,8 @@ const Follower = ({ hover, cursorPosition, size = "200", color = "var(--theme)",
 
     const lagMovement = () => {
       setFollowerPosition((prev) => {
-        const newX = prev.x + (cursorPosition.x - prev.x) * 0.1; // Adjust lag speed
-        const newY = prev.y + (cursorPosition.y - prev.y) * 0.1;
+        const newX = prev.x + (cursorPosition.x - prev.x) * lag // Adjust lag speed
+        const newY = prev.y + (cursorPosition.y - prev.y) * lag;
         return { x: newX, y: newY };
       });
 

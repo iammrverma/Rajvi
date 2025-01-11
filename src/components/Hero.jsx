@@ -6,27 +6,6 @@ import TextHeart from "../icons/TextHeart";
 const Hero = () => {
   const [hover, setHover] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [followerPosition, setFollowerPosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    let animationFrame;
-
-    const lagMovement = () => {
-      setFollowerPosition((prev) => {
-        const newX = prev.x + (cursorPosition.x - prev.x) * 0.1; // Adjust lag speed
-        const newY = prev.y + (cursorPosition.y - prev.y) * 0.1;
-        return { x: newX, y: newY };
-      });
-
-      animationFrame = requestAnimationFrame(lagMovement);
-    };
-
-    if (hover) {
-      animationFrame = requestAnimationFrame(lagMovement);
-    }
-
-    return () => cancelAnimationFrame(animationFrame); // Cleanup on hover exit
-  }, [cursorPosition, hover]);
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();

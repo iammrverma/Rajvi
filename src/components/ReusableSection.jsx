@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-export const ReusableSection = ({ children, styles = {}, className = "" }) => {
+const ReusableSection = ({ children, styles = {}, className = "" }) => {
   return (
     <Box
       className={className}
@@ -15,3 +15,5 @@ export const ReusableSection = ({ children, styles = {}, className = "" }) => {
     </Box>
   );
 };
+
+export default ReusableSection;

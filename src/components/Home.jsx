@@ -3,7 +3,7 @@ import Hero from "./Hero";
 import ClientsCarousal from "./ClientsCarousal";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
-import { ReusableSection } from "./ReusableSection";
+import ReusableSection from "./ReusableSection";
 import ServiceGlance from "./ServiceGlance";
 import ContactBanner from "./ContactBanner";
 
