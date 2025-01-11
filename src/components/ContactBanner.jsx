@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import RaiseUpOnScroll from "./RaiseUpOnScrool";
-import ButtonSecondary from "./ButtonSecondary";
+import ButtonSecondary from "./buttons/ButtonSecondary";
 import TextHeart from "../icons/TextHeart";
+import { useNavigate } from "react-router-dom";
 
 const ContactBanner = () => {
+  const navigate = useNavigate();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)"); // Change based on your breakpoints
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
     const handleMediaQueryChange = (event) => {
       setIsSmallScreen(event.matches);
     };
@@ -82,7 +83,15 @@ const ContactBanner = () => {
           </RaiseUpOnScroll>
         </div>
         <RaiseUpOnScroll>
-          <ButtonSecondary title="Get in touch now" />
+          <ButtonSecondary
+            text="Get in touch now"
+            onClick={() => navigate("/contact")}
+            styles={{
+              padding: "1.5rem 2rem",
+              fontSize: "1.5rem",
+              backgroundColor: "white",
+            }}
+          />
         </RaiseUpOnScroll>
       </div>
     </RaiseUpOnScroll>

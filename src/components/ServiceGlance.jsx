@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ExploreMore from "./ExploreMore";
 
 import adobe from "../assets/logos/adobe.png";
@@ -17,7 +17,7 @@ import hootsuite from "../assets/logos/hootsuite.png";
 import hubspot from "../assets/logos/hubspot.png";
 
 import react from "../assets/logos/react.png";
-import aws from "../assets/logos/aws.png"
+import aws from "../assets/logos/aws.png";
 import nodejs from "../assets/logos/nodejs.png";
 import mongodb from "../assets/logos/mongodb.png";
 import Tools from "./Tools";
@@ -26,15 +26,32 @@ import RaiseUpOnScroll from "./RaiseUpOnScrool";
 import SlideRightOnScroll from "./SlideRightOnscroll";
 
 const ServiceBox = ({ number, title, description, subSkills, logos }) => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const handleMediaQueryChange = (event) => {
+      setIsSmallScreen(event.matches);
+    };
+
+    // Set initial value
+    setIsSmallScreen(mediaQuery.matches);
+
+    // Listen for changes
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () =>
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  }, []);
   return (
     <RaiseUpOnScroll>
       <div
         className="serviceBox"
         style={{
           display: "flex",
+          flexDirection: `${isSmallScreen ? "column" : "row"}`,
           flexWrap: "wrap",
-          gap: "3rem",
-          alignItems: "stretch",
+          gap: `${isSmallScreen ? "" : "3rem"}`,
           borderTop: "1px solid var(--border)",
           borderBottom: "1px solid var(--border)",
           padding: "2rem 0",
@@ -54,6 +71,7 @@ const ServiceBox = ({ number, title, description, subSkills, logos }) => {
             className="name-number"
             style={{
               display: "flex",
+              flexWrap: "wrap",
               justifyContent: "space-between",
               width: "100%",
               gap: "2rem",
@@ -90,7 +108,7 @@ const ServiceBox = ({ number, title, description, subSkills, logos }) => {
             className="description"
             style={{ display: "flex", flexDirection: "column", gap: "2rem" }}
           >
-            <p>{description}</p>
+            {!isSmallScreen && <p>{description}</p>}
             <div
               className="subSkills"
               style={{
@@ -124,6 +142,23 @@ const ServiceBox = ({ number, title, description, subSkills, logos }) => {
 };
 
 const ServiceGlance = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const handleMediaQueryChange = (event) => {
+      setIsSmallScreen(event.matches);
+    };
+
+    // Set initial value
+    setIsSmallScreen(mediaQuery.matches);
+
+    // Listen for changes
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () =>
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+  }, []);
   const data = [
     {
       title: "Web Design",
@@ -184,11 +219,17 @@ const ServiceGlance = () => {
         padding: "3rem",
       }}
     >
-      <h2
-        style={{ textAlign: "center", fontSize: "5rem", marginBottom: "3rem" }}
-      >
-        Our Services At Glance
-      </h2>
+      <RaiseUpOnScroll>
+        <h2
+          style={{
+            textAlign: "center",
+            fontSize: `${isSmallScreen ? "3rem" : "5rem"}`,
+            marginBottom: "4rem",
+          }}
+        >
+          Our Services At Glance
+        </h2>
+      </RaiseUpOnScroll>
       <div
         className="servicesContainer"
         style={{

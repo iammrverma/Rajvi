@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../styles/navbar.css"; // Import the updated CSS with container queries
-import CTAButton from "./CTAButton";
+import CTAButton from "./buttons/CTAButton";
 import Hamburger from "../icons/Hamburger";
 import Close from "../icons/Close";
 import TextHeart from "../icons/TextHeart";
@@ -36,7 +36,7 @@ export const Navlist = ({ closeMenu, isOpen, wrap }) => {
 };
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate = useNavigate();
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
@@ -58,7 +58,10 @@ const NavBar = () => {
         </div>
         <div className="navbar-actions">
           <div className="navbar-cta">
-            <CTAButton />
+            <CTAButton
+              title={"Get Started"}
+              onClick={() => navigate("/contact")}
+            />
           </div>
           <div className="navbar-header">
             <button

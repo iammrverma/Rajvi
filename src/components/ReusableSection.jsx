@@ -6,9 +6,8 @@ export const ReusableSection = ({ children, styles = {}, className = "" }) => {
     <Box
       className={className}
       sx={{
-        padding: "2rem 0",
         ...styles, // Merge custom styles
-        maxWidth:"100vw",
+        maxWidth: "100vw",
         overflow: "hidden",
       }}
     >

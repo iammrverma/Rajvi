@@ -11,7 +11,7 @@ import macys from "../assets/logos/macys.svg";
 import mensHealth from "../assets/logos/menshealth.svg";
 import mrBeast from "../assets/logos/mrbeast.svg";
 
-const ClientsCarousal = ({ width = "100vw", height = "10rem" }) => {
+const ClientsCarousal = ({  height = "10rem" }) => {
   const logos = [
     logo3M,
     barstoolStore,
@@ -24,7 +24,7 @@ const ClientsCarousal = ({ width = "100vw", height = "10rem" }) => {
   ];
 
   return (
-    <div className="logos" style={{ width, height }}>
+    <div className="logos" style={{ height }}>
       <div className="logos-slide">
         {logos.map((logo, index) => (
           <img key={index} src={logo} alt={`Client logo ${index + 1}`} />

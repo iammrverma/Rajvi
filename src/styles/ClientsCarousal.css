@@ -53,8 +53,8 @@
 }
 
 .logos-slide img {
-  height: 50px;
-  margin: 0 40px;
+  height: 3.125rem;
+  margin: 0 2.5rem;
 }
 /* Ensure logos-slide spans enough width */
 .logos-slide:nth-child(2) {

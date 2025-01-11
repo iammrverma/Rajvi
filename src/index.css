@@ -107,3 +107,35 @@ body {
   scrollbar-color: var(--text-primary-color, #888)
     var(--background-color, #f5f5f5); /* Thumb and track colors */
 }
+
+.secondary-button .element {
+  position: absolute;
+  width: 0px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateZ(65deg);
+  background-color: var(--theme);
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.secondary-button:hover .element {
+  animation: rotate 1s ease-out forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(65deg);
+    width: 0px;
+  }
+  50% {
+    width: 100px;
+    transform: translate(-50%, -50%) rotateZ(-65deg);
+  }
+  100%{
+    width: 500px;
+    transform: translate(-50%, -50%) rotateZ(-65deg);
+
+  }
+}
