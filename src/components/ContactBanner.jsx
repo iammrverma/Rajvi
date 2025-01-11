@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import RaiseUpOnScroll from "./RaiseUpOnScrool";
+import {RaiseUpOnScroll} from "../animations/Animation";
 import ButtonSecondary from "./buttons/ButtonSecondary";
 import TextHeart from "../icons/TextHeart";
 import { useNavigate } from "react-router-dom";

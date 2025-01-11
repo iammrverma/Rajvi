@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "../styles/FAQ.css"; // Add this CSS file for styling
-import RaiseUpOnScroll from "./RaiseUpOnScrool";
+import { RaiseUpOnScroll } from "../animations/Animation";
 
 const FAQ = () => {
   const faqs = [
@@ -34,9 +34,8 @@ const FAQ = () => {
       </div>
       <div className="faq-right">
         {faqs.map((faq, index) => (
-          <RaiseUpOnScroll>
+          <RaiseUpOnScroll key={index}>
             <Accordion
-              key={index}
               sx={{
                 backgroundColor: "var(--background-color)",
                 color: "var(--text-primary-color)",

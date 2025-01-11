@@ -22,8 +22,8 @@ import nodejs from "../assets/logos/nodejs.png";
 import mongodb from "../assets/logos/mongodb.png";
 import Tools from "./Tools";
 import AutoModeIcon from "@mui/icons-material/AutoMode";
-import RaiseUpOnScroll from "./RaiseUpOnScrool";
-import SlideRightOnScroll from "./SlideRightOnscroll";
+
+import { RaiseUpOnScroll, SlideLeftOnScroll } from "../animations/Animation";
 
 const ServiceBox = ({ number, title, description, subSkills, logos }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -119,9 +119,8 @@ const ServiceBox = ({ number, title, description, subSkills, logos }) => {
               }}
             >
               {subSkills.map((skill, index) => (
-                <SlideRightOnScroll>
+                <SlideLeftOnScroll key={index}>
                   <h2
-                    key={index}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -130,7 +129,7 @@ const ServiceBox = ({ number, title, description, subSkills, logos }) => {
                   >
                     <AutoModeIcon /> {skill}
                   </h2>
-                </SlideRightOnScroll>
+                </SlideLeftOnScroll>
               ))}
             </div>
             <Tools svgList={logos} />

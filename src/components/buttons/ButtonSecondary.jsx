@@ -3,7 +3,7 @@ import React from "react";
 const ButtonSecondary = ({ text, styles, onClick }) => {
   return (
     <button
-    onClick={onClick}
+      onClick={onClick}
       className="secondary-button"
       style={{
         background: "none",
@@ -13,8 +13,10 @@ const ButtonSecondary = ({ text, styles, onClick }) => {
         position: "relative",
         overflow: "hidden",
         borderRadius: "2rem",
-        whiteSpace:"nowrap",
+        whiteSpace: "nowrap",
         ...styles,
+
+      
       }}
     >
       <div className="element"></div>
