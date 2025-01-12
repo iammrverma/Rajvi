@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import ButtonPrimary from "./buttons/ButtonPrimary";
 import Footer from "./Footer";
 import ReusableSection from "./ReusableSection";
-
-
+import { RaiseUpOnScroll, SlideLeftOnScroll } from "../animations/Animation";
+import { Widgets } from "@mui/icons-material";
 
 const ContactForm = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -36,7 +36,7 @@ const ContactForm = () => {
       gridTemplateColumns: `${isSmallScreen ? "1fr" : "2fr 1fr"}`,
       gap: "3rem",
     },
-    
+
     input: {
       background: "none",
       padding: "1rem 2rem",
@@ -45,6 +45,7 @@ const ContactForm = () => {
       borderBottom: "1px solid var(--text-primary-color)",
       color: "var(--text-secondary-color)",
       fontSize: "1rem",
+      width:"100%"
     },
     flex: { display: "flex", flexDirection: "column", gap: "3rem" },
     row: {
@@ -62,34 +63,24 @@ const ContactForm = () => {
   return (
     <div style={styles.contactContainer}>
       <div style={styles.twofrgrid}>
-        <h1 style={styles.title}>We' Have been waiting for you</h1>
-        <p>
-          Add the best talent on the market, an agile skilled management &
-          seamless involvement
-        </p>
+        <RaiseUpOnScroll>
+          <h1 style={styles.title}>We' Have been waiting for you</h1>
+        </RaiseUpOnScroll>
+        <SlideLeftOnScroll>
+          <p>
+            Add the best talent on the market, an agile skilled management &
+            seamless involvement
+          </p>
+        </SlideLeftOnScroll>
       </div>
-      <div style={styles.twofrgrid}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={styles.row}>
-            <input type="text" placeholder="Name" style={styles.input} />
-            <input type="text" placeholder="Email" style={styles.input} />
-          </div>
-          <div style={styles.row}>
-            <input
-              type="text"
-              placeholder="Mobile Number"
-              style={styles.input}
-            />
-            <input type="text" placeholder="Subject" style={styles.input} />
-          </div>
-          <input type="text" placeholder="message" style={styles.input} />
-        </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 3fr",
+          justifyContent: "space-between",
+          gap: "3rem",
+        }}
+      >
         <div style={styles.flex}>
           <h2>We want to hear from you. Let's us know how we can help!</h2>
           <div>
@@ -102,6 +93,34 @@ const ContactForm = () => {
               mail@example.com
             </a>
           </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <SlideLeftOnScroll>
+            <div style={styles.row}>
+              <input type="text" placeholder="Name" style={styles.input} />
+              <input type="text" placeholder="Email" style={styles.input} />
+            </div>
+          </SlideLeftOnScroll>
+          <SlideLeftOnScroll>
+            <div style={styles.row}>
+              <input
+                type="text"
+                placeholder="Mobile Number"
+                style={styles.input}
+              />
+              <input type="text" placeholder="Subject" style={styles.input} />
+            </div>
+          </SlideLeftOnScroll>
+          <SlideLeftOnScroll>
+
+          <input type="text" placeholder="Message" style={styles.input} />
+          </SlideLeftOnScroll>
         </div>
       </div>
       <div

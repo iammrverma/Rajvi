@@ -1,7 +1,7 @@
-import { Input } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { Navlist } from "./Navbar";
+import { RaiseUpOnScroll, SlideLeftOnScroll } from "../animations/Animation";
 
 const Footer = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -51,18 +51,22 @@ const Footer = () => {
               gap: "2rem",
             }}
           >
-            <h1
-              style={{
-                fontSize: `${isSmallScreen ? "3rem" : "6.25rem"}`,
-                letterSpacing: "4px",
-              }}
-            >
-              Get Started now
-            </h1>
-            <p style={{ fontSize: "2rem" }}>
-              Would like to work with us? Get in touch now for further details
-              or any work related queries
-            </p>
+            <RaiseUpOnScroll>
+              <h1
+                style={{
+                  fontSize: `${isSmallScreen ? "3rem" : "6.25rem"}`,
+                  letterSpacing: "4px",
+                }}
+              >
+                Get Started now
+              </h1>
+            </RaiseUpOnScroll>
+            <RaiseUpOnScroll>
+              <p style={{ fontSize: "2rem" }}>
+                Would like to work with us? Get in touch now for further details
+                or any work related queries
+              </p>
+            </RaiseUpOnScroll>
           </div>
         </div>
         <div
@@ -76,7 +80,6 @@ const Footer = () => {
             width: "100%",
             display: "flex",
             flexWrap: "wrap",
-            // gridTemplateColumns: `${isSmallScreen?"1fr 1fr":"1fr 1fr 1fr"}`,
           }}
         >
           <div
@@ -84,10 +87,14 @@ const Footer = () => {
             style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
           >
             <div className="city">
-              <h3 style={{ fontSize: "2rem" }}>Gurugram</h3>
+              <RaiseUpOnScroll>
+                <h3 style={{ fontSize: "2rem" }}>Gurugram</h3>
+              </RaiseUpOnScroll>
             </div>
             <div className="streetAdress">
-              <p>Huda city Metro, Haryana, India</p>
+              <RaiseUpOnScroll>
+                <p>Huda city Metro, Haryana, India</p>
+              </RaiseUpOnScroll>
             </div>
           </div>
           <div
@@ -95,10 +102,14 @@ const Footer = () => {
             style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
           >
             <div className="city">
-              <h3 style={{ fontSize: "2rem" }}>Gurugram</h3>
+              <RaiseUpOnScroll>
+                <h3 style={{ fontSize: "2rem" }}>Gurugram</h3>
+              </RaiseUpOnScroll>
             </div>
             <div className="streetAdress">
-              <p>Huda city Metro, Haryana, India</p>
+              <RaiseUpOnScroll>
+                <p>Huda city Metro, Haryana, India</p>
+              </RaiseUpOnScroll>
             </div>
           </div>
 
@@ -113,21 +124,14 @@ const Footer = () => {
               padding: "1rem ",
             }}
           >
-            <Input
+            <input
               placeholder="Enter Email"
-              sx={{
+              style={{
                 fontSize: "1.5rem",
                 color: "var(--text-primary-color)",
                 outline: "none",
                 border: "none",
-                "&:focus": {
-                  outline: "none",
-                  boxShadow: "none",
-                },
-                "&.Mui-focused": {
-                  outline: "none",
-                  boxShadow: "none",
-                },
+                backgroundColor: "Var(--background-secondary-color)",
               }}
             />
             <KeyboardDoubleArrowRightIcon
@@ -150,10 +154,14 @@ const Footer = () => {
             gap: "3rem",
           }}
         >
-          <p style={{ fontSize: "1.5rem" }}>
-            © 2021 All rights reserved by Rajvi
-          </p>
-          <Navlist wrap={true} />
+          <RaiseUpOnScroll>
+            <p style={{ fontSize: "1.5rem" }}>
+              © 2021 All rights reserved by Rajvi
+            </p>
+          </RaiseUpOnScroll>
+          <SlideLeftOnScroll>
+            <Navlist wrap={true} />
+          </SlideLeftOnScroll>
         </div>
       </div>
     </div>

@@ -4,7 +4,6 @@ import ClientsCarousal from "./ClientsCarousal";
 import FAQ from "./FAQ";
 import Footer from "./Footer";
 import ReusableSection from "./ReusableSection";
-import ServiceGlance from "./ServiceGlance";
 import ContactBanner from "./ContactBanner";
 import person from "../assets/aboutHeroTwo.webp";
 import { Testimonials } from "./Testimonials";
@@ -46,10 +45,6 @@ const Home = () => {
         children={<ClientsCarousal />}
         styles={{ marginBottom: "5rem" }}
       />
-      {/* <ReusableSection
-        children={<ServiceGlance />}
-        styles={{ marginBottom: "5rem" }}
-      /> */}
       <ReusableSection
         children={<Testimonials testimonial={testimonial} />}
         styles={{ marginBottom: "5rem" }}
