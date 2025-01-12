@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../styles/navbar.css"; // Import the updated CSS with container queries
-import CTAButton from "./buttons/CTAButton";
+import ButtonPrimary from "./buttons/ButtonPrimary";
 import Hamburger from "../icons/Hamburger";
 import Close from "../icons/Close";
 import TextHeart from "../icons/TextHeart";
@@ -58,7 +58,7 @@ const NavBar = () => {
         </div>
         <div className="navbar-actions">
           <div className="navbar-cta">
-            <CTAButton
+            <ButtonPrimary
               title={"Get Started"}
               onClick={() => navigate("/contact")}
             />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CTAButton = ({ title, style, onClick }) => {
+const ButtonPrimary = ({ title, style, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <button
@@ -31,4 +31,4 @@ const CTAButton = ({ title, style, onClick }) => {
   );
 };
 
-export default CTAButton;
+export default ButtonPrimary;
