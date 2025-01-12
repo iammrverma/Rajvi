@@ -63,3 +63,19 @@ body {
 }
 
 
+
+
+/* Add this CSS */
+.swiper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: auto; /* Let Swiper control the width */
+}
