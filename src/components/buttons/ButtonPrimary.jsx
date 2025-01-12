@@ -9,16 +9,17 @@ const ButtonPrimary = ({ title, style, onClick }) => {
       onMouseLeave={() => setIsHovered(false)}
       style={{
         backgroundColor: `${
-          isHovered ? "var(--border)" : "var(--text-primary-color)"
+          isHovered ? "var(--background-color)" : "var(--text-primary-color)"
         }`,
 
         color: `${
           isHovered ? "var(--text-primary-color" : "var(--background-color)"
         }`,
         padding: ".75rem 1.35rem",
-        borderRadius: ".5rem",
+        borderRadius: `${isHovered?"0 1.5rem":"1.5rem 0"}`,
         cursor: "pointer",
-        border: "none",
+        border: "2px solid",
+        borderColor: `${isHovered ? " var(--text-primary-color" : "none"}`,
         outline: "none",
         fontSize: "1.5rem",
         fontWeight: "bold",
